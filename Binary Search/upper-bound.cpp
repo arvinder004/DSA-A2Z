@@ -2,21 +2,21 @@
 using namespace std;
 
 int upperBound(int arr[], int n, int x){
-    int low = 0, high = n-1, lb = n;
+    int low = 0, high = n-1, ub = n;
 
     while (low <= high)
     {
         int mid = low+high/2;
 
         if(arr[mid] > x){
-            lb = mid;
+            ub = mid;
             high = mid - 1;
         }
         else {
             low = mid + 1;
         }
     }
-    return lb;
+    return ub;
 }
 
 int main (){
