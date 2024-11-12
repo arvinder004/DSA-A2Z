@@ -48,13 +48,17 @@ pair<int, int> firstAndLastOccurence(int arr[], int n, int x){
     return {first, last};
 }
 
+int count (int arr[], int n, int x){
+    pair<int, int> ans = firstAndLastOccurence(arr, n, x);
+    if(ans.first == 1) return 0;
+    return ans.second - ans.first - 1;
+
+}
+
 int main (){
     int arr[] = {2,3,5,7,8,8,11,11,13,15,24};
     int n = sizeof(arr)/sizeof(arr[0]);
 
-    int first = firstAndLastOccurence(arr, n, 8).first;
-    int last = firstAndLastOccurence(arr, n, 8).second;
 
-
-    cout << first + last << endl;
+    cout << count(arr, n, 8) << endl;
 }
