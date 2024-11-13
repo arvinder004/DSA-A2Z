@@ -21,7 +21,7 @@ int search_rotated(vector<int> &nums, int target)
 
         if (nums[low] <= nums[mid])
         {
-            if (nums[low] <= target && target < nums[mid])
+            if (nums[low] <= target && target <= nums[mid])
             {
                 high = mid - 1;
             }
@@ -32,7 +32,7 @@ int search_rotated(vector<int> &nums, int target)
         }
         else
         {
-            if (nums[high] >= target && target > nums[mid])
+            if (target >= nums[mid] && nums[high] >= target)
             {
                 low = mid + 1;
             }
